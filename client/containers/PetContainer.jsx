@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import PetDetails from '..components/PetDetails';
-import PetImages from '..components/PetImages';
-import SavePet from '..components/SavePet';
+import Container from 'react-bootstrap/Container'
+import { Col, Row } from 'react-bootstrap';
+// import PetDetails from '..components/PetDetails';
+// import PetImages from '..components/PetImages';
+// import SavePet from '..components/SavePet';
 
 
 class PetContainer extends Component {
@@ -16,22 +18,24 @@ class PetContainer extends Component {
 
   render(){
     return(
-      <div style={styles.container}>
-        <PetImages />
-        <PetDetails feedUrl= {url}/>
-        <SavePet />
-      </div>
+      <Container>
+        <Row className="justify-content-md-center">
+          <Col>(a)</Col>
+          <Col>(b)
+            <h3>main pet stuff container</h3>
+          {/* <PetImages />
+          <PetDetails feedUrl= {url}/>
+          <SavePet /> */}
+          </Col>
+          <Col>(c)</Col>
+       
+        </Row>
+      </Container>
     );
   }
 }
 
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-  }
-};
+
 
 // Render an <App> component to the #app div in the body
 ReactDOM.render(<PetContainer />, document.getElementById('app'));
