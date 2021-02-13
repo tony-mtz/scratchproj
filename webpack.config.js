@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+// const json = require('./file.json');
 
 module.exports = {
   mode: 'development', // developmentm, production(ugl & min) and none are the other versions
@@ -48,6 +49,10 @@ module.exports = {
 
         use: ['style-loader', 'css-loader'],
 
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader',
       },
 
     ],

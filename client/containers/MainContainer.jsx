@@ -10,24 +10,36 @@ import styles from '../styles.css';
 class MainContainer extends Component {
   constructor() {
     super();
-    this.state = {
-      fetchedPetData : [], 
-      indexPage: true,
-      searchHandleClick: this.searchHandleClick.bind(this)
-    }
+    this.state = {};
+    this.state.fetchedPetData = [];
+    this.state.indexPage = true;
+    this.handleSearch = this.handleSearch.bind(this);
+    this.handleSave = this.handleSave.bind(this);
   }
 
-  searchHandleClick(e){
+  //handle search requests
+  handleSearch(e){
     e.preventDefault();
-
+    console.log('inside handleSearch')
     //send fetch request here
     //parse through retrieved data
     //update state to render 
 
-    console.log('inside searchHandleClick')
+    
     this.setState({
       ...this.state,
       indexPage: false,
+    })
+  }
+
+  handleSave(e){
+    e.preventDefault();
+    console.log('inside handleSave')
+    //send fetch (Post) request here
+    //parse through retrieved data
+    //update state to render 
+    this.setState({
+      ...this.state,
     })
   }
 
@@ -38,7 +50,11 @@ class MainContainer extends Component {
       return (
         <Container>
           <Row>
-            <Col> <Navigation/> </Col>
+            <Col> 
+              <Navigation 
+                indexPage = {this.state.indexPage}
+                handleSearch = {this.handleSearch} /> 
+            </Col>
           </Row>
         </Container>
       )
@@ -48,8 +64,11 @@ class MainContainer extends Component {
     if (!this.state.indexPage){
       return (
         <div>
-          <Navigation/>
-          <PetContainer/>
+          <Navigation 
+          handleSearch = {this.handleSearch}
+          />
+          <PetContainer
+          handleSave = {this.handleSave}/>
         </div>
       )
     }
