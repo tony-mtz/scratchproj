@@ -12,7 +12,7 @@ module.exports = {
   devServer: {
     host: 'localhost',
     port: 8080,
-    contentBase: path.join(__dirname, 'build'),
+    contentBase: path.resolve(__dirname, 'build'),
     publicPath: '/', // front
     historyApiFallback: true,
     inline: true,
@@ -38,7 +38,7 @@ module.exports = {
       {
         test: /\.(js|jsx)?/,
         exclude: /node_modules/,
-        use: { loader: 'babel-loader' },
+        loader: 'babel-loader',
         query: {
           presets: ['@babel/preset-env', '@babel/preset-react'],
         },
@@ -52,11 +52,6 @@ module.exports = {
 
     ],
   },
-  // plugins: //[
-  //     new HtmlWebpackPlugin({
-  //       template: './client/index.html',
-  //     }),
-  //   ],
   resolve: {
     // Enable importing JS / JSX files without specifying their extension
     extensions: ['.js', '.jsx'],

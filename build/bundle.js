@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = "./client/index.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -227,17 +227,6 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 
 "use strict";
 eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs/scheduler-tracing.development.js */ \"./node_modules/scheduler/cjs/scheduler-tracing.development.js\");\n}\n\n\n//# sourceURL=webpack:///./node_modules/scheduler/tracing.js?");
-
-/***/ }),
-
-/***/ 0:
-/*!*******************************!*\
-  !*** multi ./client/index.js ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__(/*! ./client/index.js */\"./client/index.js\");\n\n\n//# sourceURL=webpack:///multi_./client/index.js?");
 
 /***/ })
 
