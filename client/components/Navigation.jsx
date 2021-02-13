@@ -27,25 +27,19 @@ class Navigation extends Component {
     // )
     return (
       <div>
-        <Container >
-        <Row className = " justify-content-md-center"> 
-          <Form inline >
-              <FormControl type="text" placeholder="Enter Zip Code" className="mr-sm-2" />
-              <Form.Control className="mr-sm-2" as="select">
-                <option>Dog</option>
-                <option>Cat</option>
-              </Form.Control>
-              <Button variant="outline-success">Search</Button>
-            </Form>
-        {/* <Navbar bg="light" expand="lg">
-        <Navbar.Collapse id="basic-navbar-nav"> */}
-          {/* <Nav className ="align-self-center">  */}
-          
-          
-          {/* </Nav>
-        </Navbar.Collapse>
-      </Navbar> */}
-        </Row>
+        <Container>
+
+          <Row className = " justify-content-md-center" > 
+            <Form inline className ="search-input">
+            <h1 className="mr-sm-2" >Personal Pet Finder</h1>
+                <FormControl type="text" placeholder="Enter Zip Code" className="mr-sm-2" />
+                <Form.Control className="mr-sm-2" as="select">
+                  <option>Dog</option>
+                  <option>Cat</option>
+                </Form.Control>
+                <Button variant="outline-success">Search</Button>
+              </Form>
+          </Row>
         </Container>
       </div>
     )
