@@ -38,4 +38,4 @@ class PetContainer extends Component {
 
 
 // Render an <App> component to the #app div in the body
-ReactDOM.render(<PetContainer />, document.getElementById('app'));
+export default PetContainer;
