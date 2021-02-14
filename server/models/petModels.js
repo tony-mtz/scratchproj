@@ -18,11 +18,21 @@ const Schema = mongoose.Schema;
 
 //Create schema for pet database
 const petSchema = new Schema({
-  type: String,
-  breed: String,
-  size: String,
-  age: String,
-  location: String
+  type: {
+    type: String,
+    required: true},
+  breed: {
+    type: String,
+    required: true},
+  size: {
+    type: String,
+    required: true},
+  age: {
+    type: String,
+    required: true},
+  location: {
+    type: String,
+    required: true}
 });
 
 //Create model for pet database
