@@ -61,8 +61,4 @@ class PetContainer extends Component {
 }
 
 // Render an <App> component to the #app div in the body
-<<<<<<< HEAD
-ReactDOM.render(<PetContainer {...data}/>, document.getElementById('app'));
-=======
->>>>>>> 595a2a599fad7f5249dcdf155c5a51e10d4099aa
 export default PetContainer;
