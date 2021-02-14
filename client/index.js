@@ -1,9 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
-import PetContainer from './containers/PetContainer'
+import MainContainer from './containers/MainContainer'
 
 render(
-    <PetContainer />,
+    <MainContainer />,
   
   document.getElementById('app'),
 );
+

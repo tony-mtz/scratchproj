@@ -22,10 +22,12 @@
   "dependencies": {
     "bootstrap": "^4.6.0",
     "express": "^4.17.1",
+    "import": "0.0.6",
     "mongoose": "^5.11.15",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
     "react-dom": "^16.3.1",
+    "react-lottie": "^1.2.3",
     "webpack-dev-server": "^3.11.2"
   },
   "devDependencies": {
@@ -35,10 +37,11 @@
     "babel-loader": "^8.2.2",
     "concurrently": "^5.0.0",
     "cross-env": "^6.0.3",
-    "nodemon": "^1.18.9",
-    "webpack": "^4.45.0",
-    "webpack-cli": "^3.2.3",
     "css-loader": "^1.0.1",
-    "style-loader": "^2.0.0"
+    "json-loader": "^0.5.7",
+    "nodemon": "^1.18.9",
+    "style-loader": "^2.0.0",
+    "webpack": "^4.45.0",
+    "webpack-cli": "^3.2.3"
   }
 }

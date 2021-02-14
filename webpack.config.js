@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+// const json = require('./file.json');
 
 module.exports = {
   mode: 'development', // developmentm, production(ugl & min) and none are the other versions
@@ -43,12 +44,16 @@ module.exports = {
           presets: ['@babel/preset-env', '@babel/preset-react'],
         },
       },
-        {
-            test: /\.s[ac]ss$/i, //  --> /\.s?css/
+      {
+        test: /\.css$/, //  --> /\.s?css/
 
-            use: ["style-loader", "css-loader", "sass-loader"]
+        use: ['style-loader', 'css-loader'],
 
-        }
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader',
+      },
 
     ],
   },
