@@ -5,7 +5,7 @@ import { Col, Row } from 'react-bootstrap';
 
 import PetContainer from './PetContainer';
 import Navigation from '../components/Navigation';
-import styles from '../styles.css';
+// import styles from '../styles.css';
 
 class MainContainer extends Component {
   constructor() {

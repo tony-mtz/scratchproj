@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import Container from 'react-bootstrap/Container';
 import { Col, Row } from 'react-bootstrap';
 import PetDetails from '../components/PetDetails'
-// import PetImages from '..components/PetImages';
 // import SavePet from '..components/SavePet';
 import data from '../FakeModel/fakeData';
+import PetImages from '../components/PetImages';
 
 
 class PetContainer extends Component {
@@ -40,19 +40,28 @@ class PetContainer extends Component {
       gender = {obj.gender}
       location = {obj.location}
       about = {obj.about}
+      images = {obj.images}
       />)
     })
+    console.log('after reg data', dataObjects)
+
+    const imageObjects = this.state.petData.map((obj, i)=>{
+      return(<PetImages
+      key = {i}
+      images = {obj.images}
+      
+      />)
+    })
+
+    console.log('after reg images', imageObjects)
    
     return(
+      
       <Container>
-        <Row className="justify-content-md-center">
-        <Col>(a)</Col>
-          <Col>(b)
-            <h3>Pets Near You</h3>
-            {dataObjects}
-            </Col>
-          <Col>(c)</Col>
-       
+        
+        <Row className="justify-content-md-center"><h5>Pets Near You</h5></Row>
+        <Row className="justify-content-md-center" >
+            {dataObjects}       
         </Row>
       </Container>
     );
