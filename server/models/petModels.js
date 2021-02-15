@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-//Import MongoDB URI
 const secret = require('../secrets.js')
 const MONGO_URI = secret.mongoURI;
 

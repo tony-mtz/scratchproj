@@ -4,21 +4,45 @@ const secret = require('../secrets.js');
 const petfinder = require("@petfinder/petfinder-js");
 const petSearch = new petfinder.Client({apiKey: secret.petApiKey, secret: secret.petApiSecret});
 
+const petController = {};
 
-const petController = {}
-
-petSearch.animal.search()
-    .then(function (response) {
-        // Do something with `response.data.animals`
-        //console.log(response)
-    })
-    .catch(function (error) {
-        // Handle the error
-        //console.log(error)
+petController.search = (req,res,next) =>{
+  petSearch.animal.search({type: req.params.type, location: req.params.location})
+  .then(function (query) {
+ // Do something with `response.data.animals`
+  res.locals.query = query.data;
+  console.log('pet controller', query.data)
+ 
+  next();
+  })
+  .catch(err => {
+    next({
+      log: 'There was an express error on petfinderApiController animal.search',
+      message: 'Cannot search new item'
     });
+  }); 
+} 
+
+    // async function showAnimals(animalType, location) {
+    //     let page = 1;
+    //     do {
+    //       apiResult = await petfinder.animal.search({
+    //         type: animalType,
+    //         location: location,
+    //         page,
+    //         limit: 100,
+    //       });
+    //       let dogIdx = (page - 1) * 100;
+    //       apiResult.data.animals.forEach(function(animal) {
+    //         console.log(` -- ${++dogIdx}: ${animal.name} id: ${animal.id} url: ${animal.url}`);
+    //       });
+      
+    //       page++;
+    //     } while(apiResult.data.pagination && apiResult.data.pagination.total_pages >= page);
+    //   }
 
 
-module.exports = petSearch;
+module.exports = petController;
 
 // client.animal.search({
 //     type: "Dog",

@@ -3,11 +3,9 @@
 const model = require('../models/petModels.js');
 
 // const mongoose = require('mongoose'); // might not need this
-
-
 const itemController = {};
 
-//controller for creating new item
+//controller for creating new item to DB
 itemController.createItem = function(req,res,next) {
   models.create(req.body)
   .then(status => {
@@ -21,7 +19,8 @@ itemController.createItem = function(req,res,next) {
     });
   }); 
 };
-//controller for displaying items
+
+//controller for displaying items from DB
 itemController.readItem = (req,res) => {
   models.find({})
     .then(query => {
@@ -36,14 +35,24 @@ itemController.readItem = (req,res) => {
     });
 };
 
-//controller for updating item
-itemController.updateItem = (req,res) => {
+// //controller for updating item
+// itemController.updateItem = (req,res) => {
     
-};
+// };
 
-//controller for deleting item
+//controller for deleting item from DB
 itemController.deleteItem = (req,res) => {
-    
+  models.deleteOne(req.body)
+  .then(status => {
+    console.log('success status:', status);
+    return next();
+  })  
+  .catch(err => {
+    next({
+      log: 'There was an express error on itemController.deleteItem',
+      message: 'Cannot delete item'
+    });
+  }); 
 };
 
 
