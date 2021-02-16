@@ -4,12 +4,16 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 
-//serving static files
-app.use(express.static(path.resolve(__dirname, '../build')));
+
 
 //parser to json object
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+//serving static files
+app.use(express.static(path.resolve(__dirname, '../build')));
+app.use(express.static(path.resolve(__dirname, '../client')));
+
 
 
 //connecting to routers

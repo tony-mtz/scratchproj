@@ -6,6 +6,8 @@ import { Col, Row } from 'react-bootstrap';
 import PetContainer from './PetContainer';
 import Navigation from '../components/Navigation';
 import styles from '../styles.css';
+import realFakeData from '../FakeModel/realFakeData';
+import fakeData from '../FakeModel/fakeData';
 
 class MainContainer extends Component {
   constructor() {
@@ -25,6 +27,7 @@ class MainContainer extends Component {
     //parse through retrieved data
     //update state to render 
 
+    
     
     this.setState({
       ...this.state,
@@ -65,10 +68,12 @@ class MainContainer extends Component {
       return (
         <div>
           <Navigation 
-          handleSearch = {this.handleSearch}
+            handleSearch = {this.handleSearch}
           />
           <PetContainer
-          handleSave = {this.handleSave}/>
+            handleSave = {this.handleSave}
+            data = {realFakeData}
+          />
         </div>
       )
     }
